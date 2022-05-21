@@ -1,0 +1,19 @@
+{% extends 'base.html' %} {% block pannier %}
+<div class="titre">Mon Panier</div>
+<div class="pannier">
+    {% for ch in chart %}
+    <div class="pro">
+        <img src="{{url_for('static',filename= '/images/'+chart[ch]['img'])}}" class="sideimg"></img>
+        <div id="times">{{chart[ch]["times"]}}</div>
+        <h3>le produit n~{{chart[ch]["id"]}} {{chart[ch]["marque"]}}
+            <h3>
+                <a href="/del/{{chart[ch]['id']}}" class="bin">
+                    <img src="{{url_for('static',filename='images/bin2.png')}}" class="bin"></img>
+                </a>
+    </div>
+    {% endfor %}
+
+</div>
+<div id="total" class="cart">le total est :{{total}} DH</div>
+<input type="submit" id="btn" value="buy"></input>
+{% endblock %}

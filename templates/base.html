@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Rubik+Wet+Paint&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static',filename='/css/stylee.css')}}">
+
+</head>
+
+<body>
+    <header>
+        <h1>
+            My shop
+        </h1>
+        <nav>
+            <a href="{{url_for('index')}}">Home</a>
+            <a href="{{url_for('pannier')}}">Pannier</a>
+            <a href="{{url_for('contact')}}">Contact us</a>
+            <a href="{{url_for('comments')}}">Comments</a>
+            <input type="text" placeholder="Search.." class="bar">
+        </nav>
+    </header>
+    {% block pannier %} {% endblock %} {% block comments %} {% endblock %} {% block contact %} {% endblock %}
+    <section class="container">
+        <article>
+            {% block products %} {% endblock products %}
+        </article>
+    </section>
+    <footer>
+        <p>by Yaaser Namez</p>
+    </footer>
+    <script src="{{url_for('static',filename='js/script.js')}}"></script>
+</body>
+
+</html>

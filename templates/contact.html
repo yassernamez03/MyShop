@@ -1,0 +1,13 @@
+{% extends 'base.html' %} {% block contact %}
+<div class="titre" id="contact"> </div>
+<div class="contact">
+    <form action="contact" method="POST" style="display: grid;">
+        {{form.hidden_tag()}}
+        {{form.email.label(class='label')}}
+        {{form.email(class='input')}}
+        {{form.text.label(class='label')}}
+        {{form.text(class='input')}}
+        {{form.submit(class='submit')}}
+    </form>
+</div>
+{% endblock contact %}

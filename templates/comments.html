@@ -1,0 +1,10 @@
+{% extends 'base.html' %} 
+{% block comments %} 
+<div class="comments">
+    {% for key,value in infos.items()%}
+    <div class="comment">
+        <span><p><p class="email">{{key}} :</p> {{value}} </p></span>
+    </div>
+    {% endfor %} 
+</div>
+{% endblock comments %}

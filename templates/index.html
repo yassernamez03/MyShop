@@ -1,0 +1,11 @@
+{% extends 'base.html' %} {% block products %} {% for product in products %}
+<div class="produit">
+    <img src="{{url_for('static',filename= '/images/'+product.img)}}" class="prodimg">
+    <h2 class="prix">{{product.marque}}</h2>
+    <p class="prix">{{product.prix}}DH</p>
+    <h4 class="dic">{{product.description}}</h4>
+    <a class="add" href="/add/{{product.id}}/{{product.prix}}">
+        <img src="{{url_for('static',filename='/images/add.png')}}" class="add">
+    </a>
+</div>
+{% endfor %} {% endblock products %}
